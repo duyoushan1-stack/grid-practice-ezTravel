@@ -1,0 +1,23 @@
+{
+  // 儲存時自動格式化
+  "editor.formatOnSave": true,
+
+  // 指定 Prettier 為預設 formatter
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  // 不同語言也強制使用 prettier
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+
+  // 避免與其他 formatter 衝突
+  "editor.formatOnPaste": false,
+  "editor.formatOnType": false,
+  "liveServer.settings.port": 5501
+}

@@ -1,0 +1,156 @@
+section {
+    max-width: 1100px;
+    margin: 50px auto;
+    display: grid;
+    gap: 20px;
+
+    h2 {
+        position: relative;
+    }
+
+    h2::before {
+        position: absolute;
+        content: "";
+        display: block;
+        position: absolute;
+        left: -10px;
+        z-index: -1;
+        top: -5px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 18px 18px 0 0;
+        border-color: #11d073 transparent transparent;
+    }
+}
+
+/* grid 統一區塊 */
+.topic-card,
+.tour-card {
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-content: end;
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
+}
+
+/* 焦點圖卡 */
+.topic-section {
+
+    h2::before {
+        border-width: 36px 36px 0 0;
+        border-color: #fab617 transparent transparent;
+    }
+}
+
+.container {
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+/* 焦點話題-左邊圖卡 */
+.topic-card {
+    width: 230px;
+    height: 100%;
+}
+
+.topic-card:nth-child(1) {
+    background-image: url('https://image.cdn-eztravel.com.tw/CsA2Go4BN9OvVkDgWEKu4RYhCz4Z-HeISatUOi3YZFU/g:ce/q:95/aHR0cHM6Ly9ldmVudC5jZG4tZXp0cmF2ZWwuY29tLnR3L2hwaW1nL2FwcC81NjB4ODIwLzU2MHg4MjBfMjAyNjA1YnJvczIuanBn.jpg');
+    grid-row: 1 / span 3;
+}
+
+.topic-card:nth-child(2) {
+    background-image: url('https://image.cdn-eztravel.com.tw/onfg8yHcEAQXWfEWbtu8WzL7RIkmOYDunXjI1WqI61k/g:ce/q:95/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9WRFIvVVNfMTE5MzAyNTEzLmpwZw.jpg');
+    grid-row: 1 / span 2;
+}
+
+.topic-card:nth-child(3) {
+    background-image: url('https://image.cdn-eztravel.com.tw/Hn4gYjaYym7bq9-GZsmFRqYyA7c2MPDLaSLsVJZ6jmo/g:ce/q:95/aHR0cHM6Ly9ldmVudC5jZG4tZXp0cmF2ZWwuY29tLnR3L2hwaW1nL2hwL2Jhbm5lci8yMzB4MTA0LzIzMHgxMDRfMjAyMzAzMjhBLnBuZw.png');
+    grid-row: 3 / span 1;
+}
+
+.topic-card:nth-child(4) {
+    background-image: url('https://image.cdn-eztravel.com.tw/diYBtrCi_2EUGQx_dWuCi9GKzkAFZiD86VaLDMlQQVM/g:ce/q:95/aHR0cHM6Ly9ldmVudC5jZG4tZXp0cmF2ZWwuY29tLnR3L2hwaW1nL2hwL2Jhbm5lci8yMzB4MTA0LzIwM3gxMDRfMDEwNi5qcGc.jpg');
+    grid-row: 1 / span 1;
+}
+
+.topic-card:nth-child(5) {
+    background-image: url('https://image.cdn-eztravel.com.tw/D8bOU1QDwtXO2zNIQaQBKArmI_zG3KAENDxwCvRvPSE/g:ce/q:95/aHR0cHM6Ly9ldmVudC5jZG4tZXp0cmF2ZWwuY29tLnR3L2hwaW1nL2hwL2Jhbm5lci8xMDgweDEwODAvMTA4MHgxMDgwX3BlbmdodWZpcmV3b3JrMl8yNjAzMjYuanBn.jpg');
+    grid-row: 2 / span 2;
+}
+
+/* 焦點話題-右邊列表 */
+.ad-list {
+    display: grid;
+    grid-column: 4;
+    grid-row: 1 / span 3;
+    gap: 15px;
+}
+
+.ad-item {
+    background-color: #fafafa;
+    border-radius: 10px;
+
+    img {
+        width: 110px;
+        aspect-ratio: 11 / 7;
+    }
+}
+
+/* 日本跟團 */
+.tour-content {
+    grid-template-columns: 540px repeat(2, 1fr);
+    gap: 20px;
+}
+
+.tour-item {
+    font-size: 18px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.tab-active {
+    color: #0c9251;
+    font-weight: 700;
+    padding-bottom: 5px;
+    border-bottom: 3px solid #11d073;
+}
+
+.tour-card {
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: '';
+        top: 0;
+        right: 0;
+        border-radius: 10px;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(180deg, rgba(34, 34, 34, 0) 45%, rgba(34, 34, 34, .6) 90%);
+    }
+}
+
+.tour-card:nth-child(1) {
+    background-image: url('https://image.cdn-eztravel.com.tw/WjidF3sc6lamzvaDykyIPaufcuS3SIrWi57zFB3sIa4/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9WRFIvc3VtbWVyMjAyNl83Njh4NDAwLmpwZw.jpg');
+    grid-row: 1 / span 2;
+    height: 395px;
+}
+
+.tour-card:nth-child(2) {
+    background-image: url('https://image.cdn-eztravel.com.tw/y7AdNo2aNTF3DR7vHrk-B-CCVEKxFVvKB3F7TWvYer8/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9WRFIvSlBfMjM4NjQyNzkxNS5qcGc.jpg');
+}
+
+.tour-card:nth-child(3) {
+    background-image: url('https://image.cdn-eztravel.com.tw/och2Vxcr9puw9ubb6o5sgrOPbRyDfzBmQLqC80Yep-c/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9WRFIvSlBfMzg3MDk1MzExLmpwZw.jpg');
+}
+
+.tour-card:nth-child(4) {
+    background-image: url('https://image.cdn-eztravel.com.tw/GYKsrdZrCUD2aUvFhFOTLpvx34jsjZaFkvbA6hcfGXM/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9WRFIvQVVfNTg5NjI2NTkzLmpwZw.jpg');
+}
+
+.tour-card:nth-child(5) {
+    background-image: url('https://image.cdn-eztravel.com.tw/5xDP-9fpMY-pqrYLtlnXf1BeOCaskpBvQN3PvsosfoU/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9GUk4vRlJOMDAwMDAxOTQyNS5naWY.png');
+}
