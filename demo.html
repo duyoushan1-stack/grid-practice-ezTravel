@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        text-decoration: none;
+    }
+
+    section {
+        display: grid;
+        max-width: 1100px;
+        margin: 50px auto;
+    }
+
+    .tour-nav {
+        display: flex;
+        gap: 22px;
+        font-size: 20px;
+        margin-bottom: 20px;
+        cursor: pointer;
+    }
+
+    .tour-nav li {
+        padding: 0 5px 5px;
+    }
+
+    .link-active {
+        border-bottom: 3px solid green;
+    }
+
+    .grid-wrap {
+        gap: 20px;
+        grid-template-columns: 540px repeat(2, 1fr);
+        display: none;
+
+        &:nth-of-type(1) {
+            display: grid;
+        }
+    }
+
+    .tour-item {
+        position: relative;
+        background-image: url('https://image.cdn-eztravel.com.tw/WjidF3sc6lamzvaDykyIPaufcuS3SIrWi57zFB3sIa4/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9WRFIvc3VtbWVyMjAyNl83Njh4NDAwLmpwZw.jpg');
+        background-size: cover;
+        background-position: center center;
+        border-radius: 10px;
+        align-content: end;
+        color: white;
+        padding: 10px;
+
+        &::before {
+            position: absolute;
+            content: '';
+            border-radius: 10px;
+            height: 100%;
+            width: 100%;
+            bottom: 0;
+            right: 0;
+            background-image: linear-gradient(180deg, rgba(34, 34, 34, 0) 45%, rgba(34, 34, 34, .6) 90%);
+        }
+
+        .desc {
+            position: absolute;
+            bottom: 10px;
+            z-index: 2;
+        }
+
+    }
+
+    .grid-2 .tour-item {
+        background-image: url('https://image.cdn-eztravel.com.tw/y7AdNo2aNTF3DR7vHrk-B-CCVEKxFVvKB3F7TWvYer8/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9WRFIvSlBfMjM4NjQyNzkxNS5qcGc.jpg');
+    }
+
+    .grid-3 .tour-item {
+        background-image: url('https://image.cdn-eztravel.com.tw/GYKsrdZrCUD2aUvFhFOTLpvx34jsjZaFkvbA6hcfGXM/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9WRFIvQVVfNTg5NjI2NTkzLmpwZw.jpg');
+    }
+
+    .tour-item:nth-child(1) {
+        grid-row: 1 / span 2;
+        height: 395px;
+    }
+
+    .self-tour-section {
+        grid-template-columns: 260px 820px;
+        grid-template-areas:
+            "header header"
+            "aside content"
+            "more more";
+    }
+
+    .self-item {
+        &.header {
+            display: flex;
+            justify-content: space-between;
+            grid-area: header;
+
+            ul {
+                display: flex;
+                gap: 20px;
+            }
+
+            h2 {
+                font-size: 30px;
+                font-weight: 700;
+            }
+
+            a {
+                color: white;
+            }
+        }
+
+        &.aside {
+            h4 {
+                font-size: 20px;
+                font-weight: 700;
+                color: #222;
+                margin-bottom: 10px;
+            }
+        }
+
+        &.content {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    .nav-links {
+        max-width: 820px;
+        width: 100%;
+
+        .sub-list {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            height: 32px;
+
+            li {
+                border-radius: 3px;
+                background-color: #11d073;
+                font-size: 16px;
+                padding: 5px 10px;
+            }
+        }
+    }
+
+    .aside-list {
+
+        li {
+            display: inline-block;
+            margin-right: 20px;
+            margin-bottom: 10px;
+
+            a {
+                font-style: 14px;
+            }
+        }
+    }
+</style>
+
+<body>
+    <section class="tour-section">
+        <ul class="tour-nav">
+            <li>精選推薦</li>
+            <li>北陸</li>
+            <li>北海道</li>
+        </ul>
+        <div class="container">
+            <div class="grid-wrap">
+                <div class="tour-item">
+                    <div class="desc">
+                        <h2>mock</h2>
+                        <p>say sth</p>
+                    </div>
+                </div>
+                <div class="tour-item">
+                    <div class="desc">
+                        <h2>mock</h2>
+                        <p>say sth</p>
+                    </div>
+                </div>
+                <div class="tour-item">
+                    <div class="desc">
+                        <h2>mock</h2>
+                        <p>say sth</p>
+                    </div>
+                </div>
+                <div class="tour-item">
+                    <div class="desc">
+                        <h2>mock</h2>
+                        <p>say sth</p>
+                    </div>
+                </div>
+                <div class="tour-item">
+                    <div class="desc">
+                        <h2>mock</h2>
+                        <p>say sth</p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-wrap grid-2">
+                <div class="tour-item">
+                    <div class="desc">
+                        <h2>mock</h2>
+                        <p>say sth</p>
+                    </div>
+                </div>
+                <div class="tour-item">
+                    <div class="desc">
+                        <h2>mock</h2>
+                        <p>say sth</p>
+                    </div>
+                </div>
+                <div class="tour-item">
+                    <div class="desc">
+                        <h2>mock</h2>
+                        <p>say sth</p>
+                    </div>
+                </div>
+                <div class="tour-item">
+                    <div class="desc">
+                        <h2>mock</h2>
+                        <p>say sth</p>
+                    </div>
+                </div>
+                <div class="tour-item">
+                    <div class="desc">
+                        <h2>mock</h2>
+                        <p>say sth</p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-wrap grid-3">
+                <div class="tour-item">
+                    <div class="desc">
+                        <h2>mock</h2>
+                        <p>say sth</p>
+                    </div>
+                </div>
+                <div class="tour-item">
+                    <div class="desc">
+                        <h2>mock</h2>
+                        <p>say sth</p>
+                    </div>
+                </div>
+                <div class="tour-item">
+                    <div class="desc">
+                        <h2>mock</h2>
+                        <p>say sth</p>
+                    </div>
+                </div>
+                <div class="tour-item">
+                    <div class="desc">
+                        <h2>mock</h2>
+                        <p>say sth</p>
+                    </div>
+                </div>
+                <div class="tour-item">
+                    <div class="desc">
+                        <h2>mock</h2>
+                        <p>say sth</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="self-tour-section">
+        <div class="self-item header">
+            <h2>自遊最夯</h2>
+            <div class="nav-links">
+                <ul class="main-list">
+                    <li>測試</li>
+                    <li>測試</li>
+                    <li>測試</li>
+                    <li>測試</li>
+                    <li>測試</li>
+                    <li>測試</li>
+                </ul>
+                <ul class="sub-list">
+                    <li>
+                        <a href="#">推薦專區</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="self-item aside">
+            <div class="aside-content">
+                <h4>大家都在找</h4>
+                <ul class="aside-list">
+                    <li>
+                        <a class="ezTag"
+                            href="https://flight.eztravel.com.tw/visa?_gl=1*1ybvu3s*_gcl_aw*R0NMLjE2OTE1NjA0MTIuQ2owS0NRand6OGVtQmhEckFSSXNBTk5KalM2NHhYYUMtZmhfUTJ2XzBydXlRWVJ0VDJ4WEtoMndlYm40a0JxY2Z1WVF1V1hhbm4tWDQyTWFBb012RUFMd193Y0I.*_gcl_au*NTM2NTc2MjAyLjE2OTAxNzAwOTQ.*_ga*NzU2NTYwOTg3LjE2OTAxNzAwOTQ.*_ga_XS4XWTQS4B*MTY5MTY1NzI4Ny41OC4xLjE2OTE2NTc5NDAuNDcuMC4w*_ga_0GF2LJF15R*MTY5MTY1NzI4Ny43LjEuMTY5MTY1Nzk0MC40Ny4wLjA."
+                            title="護照簽證">護照簽證
+                        </a>
+                    </li>
+                    <li>
+                        <a class="ezTag" href="https://packages.eztravel.com.tw/activity/island/" title="夢幻海島旅行">
+                            夢幻海島旅行
+                        </a>
+                    </li>
+                    <li><a class="ezTag" href="https://packages.eztravel.com.tw/activity/JX/" title="星宇機加酒">星宇機加酒</a>
+                    </li>
+                    <li><a class="ezTag" href="https://packages.eztravel.com.tw/activity/BR/" title="長榮大旅行家">長榮大旅行家</a>
+                    </li>
+                    <li><a class="ezTag" href="https://www.eztravel.com.tw/events/birthday/"
+                            title="國外機加酒生日折900">國外機加酒生日折900</a></li>
+                    <li><a class="ezTag" href="https://packages.eztravel.com.tw/activity/globalcity/promotion/"
+                            title="每週三會員機加酒折800">每週三會員機加酒折800</a></li>
+                    <li><a class="ezTag" href="https://vacation.eztravel.com.tw/activity/freetravel/txg/"
+                            title="台中出發自由行">台中出發自由行</a></li>
+                    <li><a class="ezTag" href="https://vacation.eztravel.com.tw/activity/group/khh/"
+                            title="高雄出發自由行">高雄出發自由行</a></li>
+                </ul>
+            </div>
+            <div class="adide-slider">
+                <img src="" alt="">
+            </div>
+        </div>
+        <div class="self-item content">
+            <div class="box">1</div>
+            <div class="box">2</div>
+        </div>
+    </section>
+</body>
+<script>
+    const tourNavbar = document.querySelector('.tour-nav')
+    const container = document.querySelector('.container')
+    // DOM 陣列
+    const liArr = Array.from(tourNavbar.children)
+    const gridArr = Array.from(container.children)
+
+    tourNavbar.addEventListener("click", (e) => {
+        const target = e.target
+        if (target.nodeName == 'LI') {
+            liArr.forEach(el => {
+                el.classList.remove('link-active')
+            })
+            target.classList.add('link-active')
+
+            // 顯示 grid
+            const gridIndex = liArr.indexOf(target);
+            gridArr.forEach(el => el.style.display = 'none')
+            gridArr[gridIndex].style.display = 'grid'
+        }
+    })
+    function init() {
+        liArr[0].classList.add('link-active')
+    }
+    init()
+</script>
+
+</html>
