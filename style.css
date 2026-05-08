@@ -27,12 +27,27 @@ section {
 /* grid 統一區塊 */
 .topic-card,
 .tour-card {
+    position: relative;
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center center;
     align-content: end;
     border-radius: 10px;
     color: white;
     padding: 10px;
+
+    &::before {
+        position: absolute;
+        content: '';
+        inset: 0;
+        border-radius: 10px;
+        background-image: linear-gradient(180deg, rgba(34, 34, 34, 0) 45%, rgba(34, 34, 34, .6) 90%);
+    }
+
+    >* {
+        position: relative;
+        z-index: 2;
+    }
 }
 
 /* 焦點圖卡 */
@@ -100,37 +115,22 @@ section {
 }
 
 /* 日本跟團 */
-.tour-content {
+.tour-cards {
     grid-template-columns: 540px repeat(2, 1fr);
     gap: 20px;
 }
 
-.tour-item {
+.tour-tab {
     font-size: 18px;
     padding: 5px;
     cursor: pointer;
 }
 
-.tab-active {
+.link-active {
     color: #0c9251;
     font-weight: 700;
     padding-bottom: 5px;
     border-bottom: 3px solid #11d073;
-}
-
-.tour-card {
-    position: relative;
-
-    &::before {
-        position: absolute;
-        content: '';
-        top: 0;
-        right: 0;
-        border-radius: 10px;
-        width: 100%;
-        height: 100%;
-        background-image: linear-gradient(180deg, rgba(34, 34, 34, 0) 45%, rgba(34, 34, 34, .6) 90%);
-    }
 }
 
 .tour-card:nth-child(1) {
