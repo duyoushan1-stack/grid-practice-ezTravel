@@ -1,3 +1,7 @@
+* {
+    font-family: Gudea, Heiti, 微軟正黑體, "Microsoft JhengHei";
+}
+
 section {
     max-width: 1100px;
     margin: 50px auto;
@@ -50,7 +54,7 @@ section {
     }
 }
 
-/* 焦點圖卡 */
+/* 焦點標題裝飾 */
 .topic-section {
 
     h2::before {
@@ -63,12 +67,12 @@ section {
     width: 100%;
     grid-template-columns: repeat(4, 1fr);
     gap: 15px;
+    align-items: stretch;
 }
 
 /* 焦點話題-左邊圖卡 */
 .topic-card {
     width: 230px;
-    height: 100%;
 }
 
 .topic-card:nth-child(1) {
@@ -79,21 +83,25 @@ section {
 .topic-card:nth-child(2) {
     background-image: url('https://image.cdn-eztravel.com.tw/onfg8yHcEAQXWfEWbtu8WzL7RIkmOYDunXjI1WqI61k/g:ce/q:95/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9WRFIvVVNfMTE5MzAyNTEzLmpwZw.jpg');
     grid-row: 1 / span 2;
+    height: 210px;
 }
 
 .topic-card:nth-child(3) {
     background-image: url('https://image.cdn-eztravel.com.tw/Hn4gYjaYym7bq9-GZsmFRqYyA7c2MPDLaSLsVJZ6jmo/g:ce/q:95/aHR0cHM6Ly9ldmVudC5jZG4tZXp0cmF2ZWwuY29tLnR3L2hwaW1nL2hwL2Jhbm5lci8yMzB4MTA0LzIzMHgxMDRfMjAyMzAzMjhBLnBuZw.png');
     grid-row: 3 / span 1;
+    height: 105px;
 }
 
 .topic-card:nth-child(4) {
     background-image: url('https://image.cdn-eztravel.com.tw/diYBtrCi_2EUGQx_dWuCi9GKzkAFZiD86VaLDMlQQVM/g:ce/q:95/aHR0cHM6Ly9ldmVudC5jZG4tZXp0cmF2ZWwuY29tLnR3L2hwaW1nL2hwL2Jhbm5lci8yMzB4MTA0LzIwM3gxMDRfMDEwNi5qcGc.jpg');
     grid-row: 1 / span 1;
+    height: 105px;
 }
 
 .topic-card:nth-child(5) {
     background-image: url('https://image.cdn-eztravel.com.tw/D8bOU1QDwtXO2zNIQaQBKArmI_zG3KAENDxwCvRvPSE/g:ce/q:95/aHR0cHM6Ly9ldmVudC5jZG4tZXp0cmF2ZWwuY29tLnR3L2hwaW1nL2hwL2Jhbm5lci8xMDgweDEwODAvMTA4MHgxMDgwX3BlbmdodWZpcmV3b3JrMl8yNjAzMjYuanBn.jpg');
     grid-row: 2 / span 2;
+    height: 210px;
 }
 
 /* 焦點話題-右邊列表 */
@@ -120,7 +128,8 @@ section {
     gap: 20px;
 }
 
-.tour-tab {
+.tour-tab,
+.free-trip-tab {
     font-size: 18px;
     padding: 5px;
     cursor: pointer;
@@ -153,4 +162,76 @@ section {
 
 .tour-card:nth-child(5) {
     background-image: url('https://image.cdn-eztravel.com.tw/5xDP-9fpMY-pqrYLtlnXf1BeOCaskpBvQN3PvsosfoU/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9GUk4vRlJOMDAwMDAxOTQyNS5naWY.png');
+}
+
+/* 自遊最夯 */
+
+.free-trip-section {
+    grid-template-columns: 260px 820px;
+    grid-template-areas: "header header" "aside content" "more more";
+}
+
+.free-trip-navbar {
+    grid-area: header;
+
+    .bottom-list {
+        border-radius: 3px;
+        background-color: #11d073;
+        color: white;
+        font-size: 16px;
+        padding: 5px 10px;
+        width: fit-content;
+    }
+}
+
+.free-trip-aside {
+    grid-area: aside;
+}
+
+.free-trip-content {
+    grid-area: content;
+}
+
+.free-trip-cards {
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+
+    .card-img {
+        position: relative;
+        width: 165px;
+        height: 100%;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 10px 0 0 10px;
+        }
+
+        .shadow-bg {
+            position: absolute;
+            content: '';
+            inset: 0;
+            border-radius: 10px 0 0 10px;
+            background-image: linear-gradient(180deg, rgba(34, 34, 34, 0) 45%, rgba(34, 34, 34, .6) 90%);
+        }
+    }
+}
+
+.free-trip-more {
+    grid-area: more;
+}
+
+/* 自遊最夯 - 大家都在找 */
+.aside-list {
+
+    li {
+        display: inline-block;
+        margin-right: 20px;
+        margin-bottom: 10px;
+
+        a {
+            font-size: 14px;
+        }
+    }
 }
