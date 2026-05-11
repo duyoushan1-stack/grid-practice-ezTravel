@@ -52,6 +52,19 @@ section {
         position: relative;
         z-index: 2;
     }
+
+}
+
+.topic-card,
+.tour-card,
+.free-trip-card,
+.ad-card {
+    transition: all .4s;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 0 3px 15px 0 rgba(34, 34, 34, .15);
+    }
 }
 
 /* 焦點標題裝飾 */
@@ -112,7 +125,7 @@ section {
     gap: 15px;
 }
 
-.ad-item {
+.ad-card {
     background-color: #fafafa;
     border-radius: 10px;
 
@@ -174,13 +187,18 @@ section {
 .free-trip-navbar {
     grid-area: header;
 
-    .bottom-list {
-        border-radius: 3px;
-        background-color: #11d073;
-        color: white;
+    .bottom-list li {
         font-size: 16px;
         padding: 5px 10px;
         width: fit-content;
+        color: #666;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    .bottom-list-active {
+        background-color: #11d073;
+        color: white !important;
     }
 }
 
@@ -220,6 +238,17 @@ section {
 
 .free-trip-more {
     grid-area: more;
+
+    #moreBtn {
+        width: 22px;
+        height: 22px;
+        display: inline-block;
+        border-radius: 50%;
+        margin-left: 10px;
+        background-color: #11d073;
+        color: white;
+        transition: all .4s;
+    }
 }
 
 /* 自遊最夯 - 大家都在找 */
@@ -233,5 +262,21 @@ section {
         a {
             font-size: 14px;
         }
+    }
+}
+
+/* Swiper */
+.swiper-button-prev,
+.swiper-button-next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: hsla(0, 0%, 73%, .3);
+    border-radius: 50%;
+
+    svg {
+        width: 9px;
     }
 }

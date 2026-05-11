@@ -7,7 +7,11 @@
     <meta name="description" content="提供國內外旅遊服務，團體旅遊、機票、訂房、機加酒、遊輪、票券當地遊與護照簽證代辦等。美好的旅遊經驗，就從ezTravel易遊網的第一秒開始！" />
     <link rel="icon" type="image/png" sizes="32x32"
         href="https://assets.eztravel.com.tw/assets/images/common/favicon-32.png" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=keyboard_arrow_right" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <script src="main.js" defer></script>
     <title>ezTravel易遊網 | 易遊世界．觸手可及</title>
@@ -36,22 +40,22 @@
                     <h3 class="font-bold text-lg">澎湖花火節 盛大展演▸</h3>
                 </div>
                 <ul class="ad-list">
-                    <li class="ad-item flex place-content-between w-[355px] h-[70px]">
+                    <li class="ad-card flex place-content-between w-[355px] h-[70px]">
                         <h3 class="p-[10px] text-sm font-bold">【折扣碼專區】機票|訂房|跟團▸</h3>
                         <img src="https://image.cdn-eztravel.com.tw/0IQrFcwVYp1UvFFq7J-fF23FEW3vy7ENYFQ9EnI--LM/g:ce/q:95/aHR0cHM6Ly9ldmVudC5jZG4tZXp0cmF2ZWwuY29tLnR3L2hwaW1nL2FwcC9hcHBuZXdzLzI0OHgxNzBfMjAyMjA1MjUuanBn.jpg"
                             alt="">
                     </li>
-                    <li class="ad-item flex place-content-between w-[355px] h-[70px]">
+                    <li class="ad-card flex place-content-between w-[355px] h-[70px]">
                         <h3 class="p-[10px] text-sm font-bold">【機票5折起】週3最高折$800▸</h3>
                         <img src="https://image.cdn-eztravel.com.tw/MrcYn7vhnVPpsBZ2iheyjCsLHGNXYdxxtrJEhd4TiVg/g:ce/q:95/aHR0cHM6Ly9ldmVudC5jZG4tZXp0cmF2ZWwuY29tLnR3L2hwaW1nL2FwcC8yNjZ4MjAwLzI2NngyMDBfZmxpZ2h0XzA0MjYuanBn.jpg"
                             alt="">
                     </li>
-                    <li class="ad-item flex place-content-between w-[355px] h-[70px]">
+                    <li class="ad-card flex place-content-between w-[355px] h-[70px]">
                         <h3 class="p-[10px] text-sm font-bold">【2026連假】端午3連休卡位啦▸</h3>
                         <img src="https://image.cdn-eztravel.com.tw/XUFFuKaF7VWU4wHZZwqWLK9RdeHAmCjLYossiG2iebE/g:ce/q:95/aHR0cHM6Ly9ldmVudC5jZG4tZXp0cmF2ZWwuY29tLnR3L2hwaW1nL2FwcC8yNjZ4MjAwLzI2NngyMDBfMjAyNl9sb25naG9saWRheS5qcGc.jpg"
                             alt="">
                     </li>
-                    <li class="ad-item flex place-content-between w-[355px] h-[70px]">
+                    <li class="ad-card flex place-content-between w-[355px] h-[70px]">
                         <h3 class="p-[10px] text-sm font-bold">【APP首購8%】不限金額折抵▸</h3>
                         <img src="https://image.cdn-eztravel.com.tw/4GODf7wAZdzQeUK17P07PO89M8cOXHZdX76sKoP4q8A/g:ce/q:95/aHR0cHM6Ly9ldmVudC5jZG4tZXp0cmF2ZWwuY29tLnR3L2hwaW1nL2FwcC8yNjZ4MjAwLzIwMjUxMjIzX2FwcF9maXJzdF9wdXJjaGFzZWRfMjAyNl9RMV8yNjZ4MjAwLmpwZw.jpg"
                             alt="">
@@ -277,9 +281,17 @@
                         <li class="free-trip-tab free-trip-5">高雄出發</li>
                         <li class="free-trip-tab free-trip-6">台中出發</li>
                     </ul>
-                    <ul class="bottom-list mt-5 mb-[10px]">
-                        <li>推薦專區</li>
-                    </ul>
+                    <div class="bottom-list-content">
+                        <ul class="bottom-list mt-5 mb-[10px] flex flex-wrap gap-[22px]">
+                            <li class="bottom-list-active">推薦專區</li>
+                        </ul>
+                        <ul class="bottom-list mt-5 mb-[10px] flex flex-wrap gap-[22px] hidden">
+                            <li>東京</li>
+                            <li>關西</li>
+                            <li>沖繩</li>
+                            <li>北海道</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <aside class="free-trip-aside grid items-end">
@@ -311,10 +323,30 @@
                         </li>
                     </ul>
                 </div>
-                <div class="aside-slider self-end">
-                    <img class="object-cover rounded-[10px]"
-                        src="https://image.cdn-eztravel.com.tw/b3hWX0yWYi0J1840gd9VOuqetsjIlw4abQGx4kWyK3s/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly9ldmVudC5jZG4tZXp0cmF2ZWwuY29tLnR3L2hwaW1nL2FwcC8yNDh4MTcwLzI0OHgxNzBfanhfMDExOS5qcGc.jpg"
-                        alt="">
+                <div class="aside-slider self-end swiper mySwiper w-full">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <img class="object-cover rounded-[10px] h-[188px]"
+                                src="https://image.cdn-eztravel.com.tw/b3hWX0yWYi0J1840gd9VOuqetsjIlw4abQGx4kWyK3s/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly9ldmVudC5jZG4tZXp0cmF2ZWwuY29tLnR3L2hwaW1nL2FwcC8yNDh4MTcwLzI0OHgxNzBfanhfMDExOS5qcGc.jpg"
+                                alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img class="object-cover rounded-[10px] h-[188px]"
+                                src="https://image.cdn-eztravel.com.tw/KVEGfGvYWGsOrdqyrwTySVDwwYuZFtEDqjUms9uMj1Q/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly9ldmVudC5jZG4tZXp0cmF2ZWwuY29tLnR3L2hwaW1nL2FwcC8yNDh4MTcwLzI0OHgxNzBfYnJfMDMxNy5qcGc.jpg"
+                                alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img class="object-cover rounded-[10px] h-[188px]"
+                                src="https://image.cdn-eztravel.com.tw/ADO8PBCJvH23z4u00SaBqzg-CWq5jyBFUN9wkSXbs7E/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly9ob3RlbC5jZG4tZXp0cmF2ZWwuY29tLnR3L2h0bC9odGYvZnJnL0ZYSC9DSS8lRTglOEYlQUYlRTglODglQUElRTclQjIlQkUlRTclQjclQkIlRTYlOTclODUlRTklODElOEEyLjBfNDY4eDM0Mi5qcGc.jpg"
+                                alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+
+                    <div class="swiper-button-prev !text-white !h-[30px] !w-[30px]"></div>
+                    <div class="swiper-button-next !text-white !h-[30px] !w-[30px]"></div>
                 </div>
             </aside>
             <div class="free-trip-content">
@@ -491,9 +523,33 @@
                     </a>
                 </div>
             </div>
-            <div class="free-trip-more"></div>
+            <a class="free-trip-more flex items-center justify-end" href="https://packages.eztravel.com.tw/">
+                更多
+                <span class="material-symbols-outlined" id="moreBtn">
+                    keyboard_arrow_right
+                </span>
+            </a>
         </section>
     </main>
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
 </body>
 
 </html>
