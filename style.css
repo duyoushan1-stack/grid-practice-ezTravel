@@ -148,25 +148,8 @@ section {
 }
 
 .tour-card:nth-child(1) {
-    background-image: url('https://image.cdn-eztravel.com.tw/WjidF3sc6lamzvaDykyIPaufcuS3SIrWi57zFB3sIa4/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9WRFIvc3VtbWVyMjAyNl83Njh4NDAwLmpwZw.jpg');
     grid-row: 1 / span 2;
     height: 395px;
-}
-
-.tour-card:nth-child(2) {
-    background-image: url('https://image.cdn-eztravel.com.tw/y7AdNo2aNTF3DR7vHrk-B-CCVEKxFVvKB3F7TWvYer8/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9WRFIvSlBfMjM4NjQyNzkxNS5qcGc.jpg');
-}
-
-.tour-card:nth-child(3) {
-    background-image: url('https://image.cdn-eztravel.com.tw/och2Vxcr9puw9ubb6o5sgrOPbRyDfzBmQLqC80Yep-c/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9WRFIvSlBfMzg3MDk1MzExLmpwZw.jpg');
-}
-
-.tour-card:nth-child(4) {
-    background-image: url('https://image.cdn-eztravel.com.tw/GYKsrdZrCUD2aUvFhFOTLpvx34jsjZaFkvbA6hcfGXM/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9WRFIvQVVfNTg5NjI2NTkzLmpwZw.jpg');
-}
-
-.tour-card:nth-child(5) {
-    background-image: url('https://image.cdn-eztravel.com.tw/5xDP-9fpMY-pqrYLtlnXf1BeOCaskpBvQN3PvsosfoU/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9GUk4vRlJOMDAwMDAxOTQyNS5naWY.png');
 }
 
 /* 自遊最夯 */

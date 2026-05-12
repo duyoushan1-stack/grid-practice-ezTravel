@@ -13,14 +13,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="style.css">
-    <script src="main.js" defer></script>
+    <!-- <script src="main.js" defer></script> -->
+    <script src="app.js" type="module"></script>
     <title>ezTravel易遊網 | 易遊世界．觸手可及</title>
 </head>
 
 <body>
-    <!-- 焦點話題、日本跟團、自遊最夯 -->
-    <main>
-        <!-- 焦點話題：div + ul.ad -->
+    <main x-data="showTabContent">
+        <!-- 焦點話題-->
         <section class="topic-section">
             <h2 class="text-[#222] font-bold text-3xl relative">焦點話題</h2>
             <div class="container grid h-[330px] w-full">
@@ -98,25 +98,27 @@
                 </ul>
             </div>
         </section>
-        <!-- 日本跟團：div -->
+        <!-- 日本跟團-->
         <section class="tour-section">
             <div class="tour-navbar flex place-content-between items-center">
                 <h2 class="max-w-[260px] w-full text-[#222] font-bold text-3xl relative">日本跟團</h2>
                 <ul class="tour-list max-w-[820px] w-full justify-start flex flex-wrap gap-[22px]">
-                    <li class="tour-tab tour-1">精選推薦</li>
-                    <li class="tour-tab tour-2">北陸</li>
-                    <li class="tour-tab tour-3">北海道</li>
-                    <li class="tour-tab tour-4">東北</li>
-                    <li class="tour-tab tour-5">東京</li>
-                    <li class="tour-tab tour-6">關西</li>
-                    <li class="tour-tab tour-7">九州</li>
-                    <li class="tour-tab tour-8">四國</li>
-                    <li class="tour-tab tour-9">沖繩</li>
-                    <li class="tour-tab tour-10">高雄出發</li>
+                    <template x-for="tour in tourList">
+                        <li x-text="tour.title" @click="goTourTab" class="tour-tab tour-1"></li>
+                        <li @click="goTourTab2" class="tour-tab tour-2"></li>
+                        <li class="tour-tab tour-3"></li>
+                        <li class="tour-tab tour-4"></li>
+                        <li class="tour-tab tour-5"></li>
+                        <li class="tour-tab tour-6"></li>
+                        <li class="tour-tab tour-7"></li>
+                        <li class="tour-tab tour-8"></li>
+                        <li class="tour-tab tour-9"></li>
+                        <li class="tour-tab tour-10"></li>
+                    </template>
                 </ul>
             </div>
             <div class="tour-content">
-                <div class="tour-cards w-full grid">
+                <div x-show="tourCards == 'tour-1'" class="tour-cards w-full grid">
                     <a href="" class="tour-card text-white">
                         <div class="card-img">
                             <img src="https://image.cdn-eztravel.com.tw/WjidF3sc6lamzvaDykyIPaufcuS3SIrWi57zFB3sIa4/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9WRFIvc3VtbWVyMjAyNl83Njh4NDAwLmpwZw.jpg"
@@ -188,7 +190,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="tour-cards w-full grid hidden">
+                <div x-show="tourCards == 'tour-2'" class="tour-cards w-full grid">
                     <a href="" class="tour-card text-white">
                         <div class="card-img">
                             <img src="https://image.cdn-eztravel.com.tw/Xt26z1RetqHk1FmIRaZnphHE19H-KnYLBeEwh21pktY/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9WRFIvSlBfMjc5MDUzMjIyLmpwZw.jpg"
@@ -262,14 +264,14 @@
                 </div>
             </div>
         </section>
-        <!-- 自遊最夯：nav+.ad(.slider)+article.country-tab>.article-item>.tab -->
+        <!-- 自遊最夯-->
         <section class="free-trip-section">
             <div class="free-trip-navbar flex place-content-between items-center">
                 <h2 class="max-w-[260px] w-full text-[#222] font-bold text-3xl relative self-start">自遊最夯</h2>
                 <div class="free-trip-list max-w-[820px] w-full justify-start">
                     <ul class="top-list flex flex-wrap gap-[22px]">
                         <li class="free-trip-tab free-trip-1">精選推薦</li>
-                        <li class="free-trip-tab free-trip-2">日本</li>
+                        <li @click="isActive" class="free-trip-tab free-trip-2">日本</li>
                         <li class="free-trip-tab free-trip-3">東南亞</li>
                         <li class="free-trip-tab free-trip-4">島嶼/歐洲</li>
                         <li class="free-trip-tab free-trip-5">高雄出發</li>
