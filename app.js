@@ -1,30 +1,17 @@
 import Alpine from 'alpinejs'
+import tourList from './data/tourList.json'
 
 window.Alpine = Alpine
 
 const showTabContent = () => ({
-  tourCards: 'tour-1',
-  tourList: [
-    '精選推薦',
-    '北陸',
-    '北海道',
-    '東北',
-    '東京',
-    '關西',
-    '九州',
-    '四國',
-    '沖繩',
-    '高雄出發',
-  ],
-  isActive: false,
+  tourList,
+  tourCards: '精選推薦',
   init() {
-    this.tourCards = 'tour-1'
+    this.tourCards = '精選推薦'
   },
-  goTourTab() {
-    const tour = {
-      title: this.tourList,
-    }
-    this.tourCards = 'tour-2'
+  goTourTab(list) {
+    this.tourCards = list.title
+    console.log(this.tourCards)
   },
 })
 

@@ -75,7 +75,7 @@ section {
 
 .container {
     width: 100%;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr) 355px;
     gap: 15px;
     align-items: stretch;
 }
@@ -91,22 +91,22 @@ section {
 
 .topic-card:nth-child(2) {
     grid-row: 1 / span 2;
-    height: 210px;
+    /* height: 210px; */
 }
 
 .topic-card:nth-child(3) {
     grid-row: 3 / span 1;
-    height: 105px;
+    /* height: 105px; */
 }
 
 .topic-card:nth-child(4) {
     grid-row: 1 / span 1;
-    height: 105px;
+    /* height: 105px; */
 }
 
 .topic-card:nth-child(5) {
     grid-row: 2 / span 2;
-    height: 210px;
+    /* height: 210px; */
 }
 
 /* 焦點話題-右邊列表 */

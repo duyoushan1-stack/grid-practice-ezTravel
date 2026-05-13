@@ -75,22 +75,22 @@
                     </div>
                 </a>
                 <ul class="ad-list">
-                    <li class="ad-card flex place-content-between w-[355px] h-[70px]">
+                    <li class="ad-card flex place-content-between">
                         <h3 class="p-[10px] text-sm font-bold">【折扣碼專區】機票|訂房|跟團▸</h3>
                         <img src="https://image.cdn-eztravel.com.tw/0IQrFcwVYp1UvFFq7J-fF23FEW3vy7ENYFQ9EnI--LM/g:ce/q:95/aHR0cHM6Ly9ldmVudC5jZG4tZXp0cmF2ZWwuY29tLnR3L2hwaW1nL2FwcC9hcHBuZXdzLzI0OHgxNzBfMjAyMjA1MjUuanBn.jpg"
                             alt="">
                     </li>
-                    <li class="ad-card flex place-content-between w-[355px] h-[70px]">
+                    <li class="ad-card flex place-content-between">
                         <h3 class="p-[10px] text-sm font-bold">【機票5折起】週3最高折$800▸</h3>
                         <img src="https://image.cdn-eztravel.com.tw/MrcYn7vhnVPpsBZ2iheyjCsLHGNXYdxxtrJEhd4TiVg/g:ce/q:95/aHR0cHM6Ly9ldmVudC5jZG4tZXp0cmF2ZWwuY29tLnR3L2hwaW1nL2FwcC8yNjZ4MjAwLzI2NngyMDBfZmxpZ2h0XzA0MjYuanBn.jpg"
                             alt="">
                     </li>
-                    <li class="ad-card flex place-content-between w-[355px] h-[70px]">
+                    <li class="ad-card flex place-content-between">
                         <h3 class="p-[10px] text-sm font-bold">【2026連假】端午3連休卡位啦▸</h3>
                         <img src="https://image.cdn-eztravel.com.tw/XUFFuKaF7VWU4wHZZwqWLK9RdeHAmCjLYossiG2iebE/g:ce/q:95/aHR0cHM6Ly9ldmVudC5jZG4tZXp0cmF2ZWwuY29tLnR3L2hwaW1nL2FwcC8yNjZ4MjAwLzI2NngyMDBfMjAyNl9sb25naG9saWRheS5qcGc.jpg"
                             alt="">
                     </li>
-                    <li class="ad-card flex place-content-between w-[355px] h-[70px]">
+                    <li class="ad-card flex place-content-between">
                         <h3 class="p-[10px] text-sm font-bold">【APP首購8%】不限金額折抵▸</h3>
                         <img src="https://image.cdn-eztravel.com.tw/4GODf7wAZdzQeUK17P07PO89M8cOXHZdX76sKoP4q8A/g:ce/q:95/aHR0cHM6Ly9ldmVudC5jZG4tZXp0cmF2ZWwuY29tLnR3L2hwaW1nL2FwcC8yNjZ4MjAwLzIwMjUxMjIzX2FwcF9maXJzdF9wdXJjaGFzZWRfMjAyNl9RMV8yNjZ4MjAwLmpwZw.jpg"
                             alt="">
@@ -104,21 +104,12 @@
                 <h2 class="max-w-[260px] w-full text-[#222] font-bold text-3xl relative">日本跟團</h2>
                 <ul class="tour-list max-w-[820px] w-full justify-start flex flex-wrap gap-[22px]">
                     <template x-for="tour in tourList">
-                        <li x-text="tour.title" @click="goTourTab" class="tour-tab tour-1"></li>
-                        <li @click="goTourTab2" class="tour-tab tour-2"></li>
-                        <li class="tour-tab tour-3"></li>
-                        <li class="tour-tab tour-4"></li>
-                        <li class="tour-tab tour-5"></li>
-                        <li class="tour-tab tour-6"></li>
-                        <li class="tour-tab tour-7"></li>
-                        <li class="tour-tab tour-8"></li>
-                        <li class="tour-tab tour-9"></li>
-                        <li class="tour-tab tour-10"></li>
+                        <li x-text="tour.title" @click="goTourTab(tourList)" class="tour-tab"></li>
                     </template>
                 </ul>
             </div>
             <div class="tour-content">
-                <div x-show="tourCards == 'tour-1'" class="tour-cards w-full grid">
+                <div x-show="tourCards == tour.title" class="tour-cards w-full grid">
                     <a href="" class="tour-card text-white">
                         <div class="card-img">
                             <img src="https://image.cdn-eztravel.com.tw/WjidF3sc6lamzvaDykyIPaufcuS3SIrWi57zFB3sIa4/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9WRFIvc3VtbWVyMjAyNl83Njh4NDAwLmpwZw.jpg"
@@ -190,7 +181,7 @@
                         </div>
                     </a>
                 </div>
-                <div x-show="tourCards == 'tour-2'" class="tour-cards w-full grid">
+                <div x-show="tourCards == tour.title" class="tour-cards w-full grid">
                     <a href="" class="tour-card text-white">
                         <div class="card-img">
                             <img src="https://image.cdn-eztravel.com.tw/Xt26z1RetqHk1FmIRaZnphHE19H-KnYLBeEwh21pktY/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9WRFIvSlBfMjc5MDUzMjIyLmpwZw.jpg"
