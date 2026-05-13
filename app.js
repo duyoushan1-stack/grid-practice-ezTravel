@@ -5,13 +5,18 @@ window.Alpine = Alpine
 
 const showTabContent = () => ({
   tourList,
-  tourCards: '精選推薦',
+  activeTab: '精選推薦',
   init() {
-    this.tourCards = '精選推薦'
+    this.activeTab = '精選推薦'
   },
-  goTourTab(list) {
-    this.tourCards = list.title
-    console.log(this.tourCards)
+  // 根据 tab 標題獲取對應卡片數據
+  get cards() {
+    const tab = this.tourList.find(item => item.title === this.activeTab)
+    return tab ? tab.cards : []
+  },
+  // 切换 tab
+  goTourTab(title) {
+    this.activeTab = title
   },
 })
 

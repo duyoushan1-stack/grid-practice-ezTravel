@@ -104,154 +104,29 @@
                 <h2 class="max-w-[260px] w-full text-[#222] font-bold text-3xl relative">日本跟團</h2>
                 <ul class="tour-list max-w-[820px] w-full justify-start flex flex-wrap gap-[22px]">
                     <template x-for="tour in tourList">
-                        <li x-text="tour.title" @click="goTourTab(tourList)" class="tour-tab"></li>
+                        <li x-text="tour.title" @click="goTourTab(tour.title)"
+                            :class="{'tour-tab': true, 'active': activeTab === tour.title}"></li>
                     </template>
                 </ul>
             </div>
             <div class="tour-content">
-                <div x-show="tourCards == tour.title" class="tour-cards w-full grid">
-                    <a href="" class="tour-card text-white">
-                        <div class="card-img">
-                            <img src="https://image.cdn-eztravel.com.tw/WjidF3sc6lamzvaDykyIPaufcuS3SIrWi57zFB3sIa4/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9WRFIvc3VtbWVyMjAyNl83Njh4NDAwLmpwZw.jpg"
-                                alt="">
-                            <div class="shadow-bg"></div>
-                        </div>
-                        <div class="card-desc w-[calc(100%_-_20px)] absolute bottom-[10px] left-[10px]">
-                            <h3 class="text-xl font-bold">‼️搶先預購．暑假卡位戰✨</h3>
-                            <div class="flex place-content-between items-center mt-[5px]">
-                                <p class="font-bold">親子跟團每人現省$500</p>
-                                <p><span class="text-[#fab617] text-lg font-bold mr-[5px]">21,000</span>起</p>
+                <div class="tour-cards w-full grid">
+                    <template x-for="card in cards">
+                        <a href="" class="tour-card text-white">
+                            <div class="card-img">
+                                <img x-bind:src="card.img" x-bind:alt="card.title">
+                                <div class="shadow-bg"></div>
                             </div>
-                        </div>
-                    </a>
-                    <a href="" class="tour-card text-white">
-                        <div class="card-img">
-                            <img src="https://image.cdn-eztravel.com.tw/y7AdNo2aNTF3DR7vHrk-B-CCVEKxFVvKB3F7TWvYer8/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9WRFIvSlBfMjM4NjQyNzkxNS5qcGc.jpg"
-                                alt="">
-                            <div class="shadow-bg"></div>
-                        </div>
-                        <div class="card-desc w-[calc(100%_-_20px)] absolute bottom-[10px] left-[10px]">
-                            <h3 class="text-xl font-bold">每周推薦 獨家優惠</h3>
-                            <div class="flex place-content-between items-center mt-[5px]">
-                                <p class="font-bold">買到賺到!最高減四千</p>
-                                <p><span class="text-[#fab617] text-lg font-bold mr-[5px]">23,900</span>起</p>
+                            <div class="card-desc w-[calc(100%_-_20px)] absolute bottom-[10px] left-[10px]">
+                                <h3 x-text="card.title" class="text-xl font-bold"></h3>
+                                <div class="flex place-content-between items-center mt-[5px]">
+                                    <p x-text="card.desc" class="font-bold"></p>
+                                    <p><span x-text="card.price"
+                                            class="text-[#fab617] text-lg font-bold mr-[5px]"></span>起</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                    <a href="" class="tour-card text-white">
-                        <div class="card-img">
-                            <img src="https://image.cdn-eztravel.com.tw/och2Vxcr9puw9ubb6o5sgrOPbRyDfzBmQLqC80Yep-c/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9WRFIvSlBfMzg3MDk1MzExLmpwZw.jpg"
-                                alt="">
-                            <div class="shadow-bg"></div>
-                        </div>
-                        <div class="card-desc w-[calc(100%_-_20px)] absolute bottom-[10px] left-[10px]">
-                            <h3 class="text-xl font-bold">春日夢幻三重奏💮</h3>
-                            <div class="flex place-content-between items-center mt-[5px]">
-                                <p class="font-bold">芝櫻x粉蝶x紫藤花</p>
-                                <p><span class="text-[#fab617] text-lg font-bold mr-[5px]">25,700</span>起</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="" class="tour-card text-white">
-                        <div class="card-img">
-                            <img src="https://image.cdn-eztravel.com.tw/GYKsrdZrCUD2aUvFhFOTLpvx34jsjZaFkvbA6hcfGXM/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9WRFIvQVVfNTg5NjI2NTkzLmpwZw.jpg"
-                                alt="">
-                            <div class="shadow-bg"></div>
-                        </div>
-                        <div class="card-desc w-[calc(100%_-_20px)] absolute bottom-[10px] left-[10px]">
-                            <h3 class="text-xl font-bold">已成團專區</h3>
-                            <div class="flex place-content-between items-center mt-[5px]">
-                                <p class="font-bold">出國跟團不必等✈</p>
-                                <p><span class="text-[#fab617] text-lg font-bold mr-[5px]">13,888</span>起</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="" class="tour-card text-white">
-                        <div class="card-img">
-                            <img src="https://image.cdn-eztravel.com.tw/5xDP-9fpMY-pqrYLtlnXf1BeOCaskpBvQN3PvsosfoU/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9GUk4vRlJOMDAwMDAxOTQyNS5naWY.png"
-                                alt="">
-                            <div class="shadow-bg"></div>
-                        </div>
-                        <div class="card-desc w-[calc(100%_-_20px)] absolute bottom-[10px] left-[10px]">
-                            <h3 class="text-xl font-bold">易遊嚴選</h3>
-                            <div class="flex place-content-between items-center mt-[5px]">
-                                <p class="font-bold">立山黑部 雪壁奇景</p>
-                                <p><span class="text-[#fab617] text-lg font-bold mr-[5px]">21,000</span>起</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div x-show="tourCards == tour.title" class="tour-cards w-full grid">
-                    <a href="" class="tour-card text-white">
-                        <div class="card-img">
-                            <img src="https://image.cdn-eztravel.com.tw/Xt26z1RetqHk1FmIRaZnphHE19H-KnYLBeEwh21pktY/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9WRFIvSlBfMjc5MDUzMjIyLmpwZw.jpg"
-                                alt="">
-                            <div class="shadow-bg"></div>
-                        </div>
-                        <div class="card-desc w-[calc(100%_-_20px)] absolute bottom-[10px] left-[10px]">
-                            <h3 class="text-xl font-bold">北陸～走進世界級雪景奇觀</h3>
-                            <div class="flex place-content-between items-center mt-[5px]">
-                                <p class="font-bold">春季限定・立山雪壁大公開</p>
-                                <p><span class="text-[#fab617] text-lg font-bold mr-[5px]">33,900</span>起</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="" class="tour-card text-white">
-                        <div class="card-img">
-                            <img src="https://image.cdn-eztravel.com.tw/PAb5ffDOAzaDUZ73RQhZoOalMHpF-mwQ7avwv-5Panw/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9WRFIvSlBfMTA4MjAyMTM2LmpwZw.jpg"
-                                alt="">
-                            <div class="shadow-bg"></div>
-                        </div>
-                        <div class="card-desc w-[calc(100%_-_20px)] absolute bottom-[10px] left-[10px]">
-                            <h3 class="text-xl font-bold">日本三大名園之一</h3>
-                            <div class="flex place-content-between items-center mt-[5px]">
-                                <p class="font-bold">金澤兼六園</p>
-                                <p><span class="text-[#fab617] text-lg font-bold mr-[5px]">27,700</span>起</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="" class="tour-card text-white">
-                        <div class="card-img">
-                            <img src="https://image.cdn-eztravel.com.tw/s-e15My-8mbzJFrp2AaNDmpcfA9eE0n7nl3exg7OXS0/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9WRFIvSlBfMTU5NDY5Njk0LmpwZw.jpg"
-                                alt="">
-                            <div class="shadow-bg"></div>
-                        </div>
-                        <div class="card-desc w-[calc(100%_-_20px)] absolute bottom-[10px] left-[10px]">
-                            <h3 class="text-xl font-bold">北陸限時超下殺</h3>
-                            <div class="flex place-content-between items-center mt-[5px]">
-                                <p class="font-bold">享⭐驚喜折扣價</p>
-                                <p><span class="text-[#fab617] text-lg font-bold mr-[5px]">39,900</span>起</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="" class="tour-card text-white">
-                        <div class="card-img">
-                            <img src="https://image.cdn-eztravel.com.tw/zqkWg28qOM1oTOwzuT_2V28V3tR8ElwcUC6jJhlEaLQ/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9WRFIvSlBfNDgxMTQ4MDQxLmpwZw.jpg"
-                                alt="">
-                            <div class="shadow-bg"></div>
-                        </div>
-                        <div class="card-desc w-[calc(100%_-_20px)] absolute bottom-[10px] left-[10px]">
-                            <h3 class="text-xl font-bold">北陸秘境5日遊</h3>
-                            <div class="flex place-content-between items-center mt-[5px]">
-                                <p class="font-bold">感受江戶時代氛圍</p>
-                                <p><span class="text-[#fab617] text-lg font-bold mr-[5px]">26,700</span>起</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="" class="tour-card text-white">
-                        <div class="card-img">
-                            <img src="https://image.cdn-eztravel.com.tw/TA-ZC9ue6NMAkGis3379marNoS23ZEi8BtBnTV3iOXc/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9GUk4vRlJOMDAwMDAxODkwOC5naWY.png"
-                                alt="">
-                            <div class="shadow-bg"></div>
-                        </div>
-                        <div class="card-desc w-[calc(100%_-_20px)] absolute bottom-[10px] left-[10px]">
-                            <h3 class="text-xl font-bold">易遊x星宇x北陸</h3>
-                            <div class="flex place-content-between items-center mt-[5px]">
-                                <p class="font-bold">環球、樂高、合掌村</p>
-                                <p><span class="text-[#fab617] text-lg font-bold mr-[5px]">32,900</span>起</p>
-                            </div>
-                        </div>
-                    </a>
+                        </a>
+                    </template>
                 </div>
             </div>
         </section>

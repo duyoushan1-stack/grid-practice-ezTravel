@@ -19,5 +19,8 @@
   // 避免與其他 formatter 衝突
   "editor.formatOnPaste": false,
   "editor.formatOnType": false,
-  "liveServer.settings.port": 5501
+  "liveServer.settings.port": 5501,
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  }
 }
