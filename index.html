@@ -136,24 +136,18 @@
                 <h2 class="max-w-[260px] w-full text-[#222] font-bold text-3xl relative self-start">自遊最夯</h2>
                 <div class="free-trip-list max-w-[820px] w-full justify-start">
                     <ul class="top-list flex flex-wrap gap-[22px]">
-                        <li class="free-trip-tab free-trip-1">精選推薦</li>
-                        <li @click="isActive" class="free-trip-tab free-trip-2">日本</li>
-                        <li class="free-trip-tab free-trip-3">東南亞</li>
-                        <li class="free-trip-tab free-trip-4">島嶼/歐洲</li>
-                        <li class="free-trip-tab free-trip-5">高雄出發</li>
-                        <li class="free-trip-tab free-trip-6">台中出發</li>
+                        <template x-for="main in freeTrip">
+                            <li x-text="main.title" class="free-trip-tab" @click="goMainTab(main.title)"
+                                :class="{'tour-tab': true, 'active': activeMainTab === main.title}"></li>
+                        </template>
                     </ul>
-                    <div class="bottom-list-content">
-                        <ul class="bottom-list mt-5 mb-[10px] flex flex-wrap gap-[22px]">
-                            <li class="bottom-list-active">推薦專區</li>
-                        </ul>
-                        <ul class="bottom-list mt-5 mb-[10px] flex flex-wrap gap-[22px] hidden">
-                            <li>東京</li>
-                            <li>關西</li>
-                            <li>沖繩</li>
-                            <li>北海道</li>
-                        </ul>
-                    </div>
+                    <ul class="bottom-list mt-5 mb-[10px] flex flex-wrap gap-[22px]">
+                        <template x-for="sub in subTabs">
+                            <li x-text="sub.label" @click="goSubTab(sub.label)"
+                                :class="{'bottom-list-active': activeSubTab == sub.label}">
+                            </li>
+                        </template>
+                    </ul>
                 </div>
             </div>
             <aside class="free-trip-aside grid items-end">
@@ -213,176 +207,21 @@
             </aside>
             <div class="free-trip-content">
                 <div class="free-trip-cards grid">
-                    <a href="" class="free-trip-card flex h-30 bg-[#fafafa] rounded-tr-[10px] rounded-br-[10px]">
-                        <div class="card-img">
-                            <img src="https://image.cdn-eztravel.com.tw/vmeJWBmCchvVxWcsL5Et58OiNQZMNjM6hWb7vNys1HY/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly9ob3RlbC5jZG4tZXp0cmF2ZWwuY29tLnR3L2h0Zi9mcmcvRlhIL2FyZWFfMjAzL-a-s-mWgDI2NlgyMDAuanBn.jpg"
-                                alt="">
-                            <div class="shadow-bg"></div>
-                            <p class="absolute bottom-[10px] left-[10px] text-white">大三巴、旅遊塔</p>
-                        </div>
-                        <div class="card-content flex-1 p-[10px] flex flex-col justify-between">
-                            <h3 class="font-bold">澳門機加酒✈３天２夜</h3>
-                            <p class="price self-end"><span
-                                    class="text-[#ff8b00] text-lg font-bold mr-[5px]">9,999</span>起
-                            </p>
-                        </div>
-                    </a>
-                    <a href="" class="free-trip-card flex h-30 bg-[#fafafa] rounded-tr-[10px] rounded-br-[10px]">
-                        <div class="card-img">
-                            <img src="https://image.cdn-eztravel.com.tw/nx8BUldCjiYaZzsu-PWg97095IUtKYBhS5kRScx6E00/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly9ob3RlbC5jZG4tZXp0cmF2ZWwuY29tLnR3L2h0Zi9mcmcvRlhIL2FyZWFfMjAxL3Rva3lvXzAxLmpwZw.jpg"
-                                alt="">
-                            <div class="shadow-bg"></div>
-                            <p class="absolute bottom-[10px] left-[10px] text-white">晴空塔、迪士尼</p>
-                        </div>
-                        <div class="card-content flex-1 p-[10px] flex flex-col justify-between">
-                            <h3 class="font-bold">東京機加酒✈５天４夜</h3>
-                            <p class="price self-end"><span
-                                    class="text-[#ff8b00] text-lg font-bold mr-[5px]">13,100</span>起
-                            </p>
-                        </div>
-                    </a>
-                    <a href="" class="free-trip-card flex h-30 bg-[#fafafa] rounded-tr-[10px] rounded-br-[10px]">
-                        <div class="card-img">
-                            <img src="https://image.cdn-eztravel.com.tw/6oquADtl2WX4Jts2PjwLoNXd2ZzrIDik0xPDY0W1DMg/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly9ob3RlbC5jZG4tZXp0cmF2ZWwuY29tLnR3L2h0Zi9mcmcvRlhIL2FyZWFfMjAyL2Jhbmdrb2tfMDIuanBn.jpg"
-                                alt="">
-                            <div class="shadow-bg"></div>
-                            <p class="absolute bottom-[10px] left-[10px] text-white">美食、購物、寺廟</p>
-                        </div>
-                        <div class="card-content flex-1 p-[10px] flex flex-col justify-between">
-                            <h3 class="font-bold">曼谷機加酒✈５天４夜</h3>
-                            <p class="price self-end"><span
-                                    class="text-[#ff8b00] text-lg font-bold mr-[5px]">9,200</span>起
-                            </p>
-                        </div>
-                    </a>
-                    <a href="" class="free-trip-card flex h-30 bg-[#fafafa] rounded-tr-[10px] rounded-br-[10px]">
-                        <div class="card-img">
-                            <img src="https://image.cdn-eztravel.com.tw/Le8YGTXFZgglS6ddQsO37D-l5LmAz-omwZAaOYdemVo/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly9ob3RlbC5jZG4tZXp0cmF2ZWwuY29tLnR3L2h0Zi9mcmcvRlhIL2FyZWFfMjAxL29zYWthXzAyLmpwZw.jpg"
-                                alt="">
-                            <div class="shadow-bg"></div>
-                            <p class="absolute bottom-[10px] left-[10px] text-white">特色美食逛街購物</p>
-                        </div>
-                        <div class="card-content flex-1 p-[10px] flex flex-col justify-between">
-                            <h3 class="font-bold">大阪機加酒✈５天４夜</h3>
-                            <p class="price self-end"><span
-                                    class="text-[#ff8b00] text-lg font-bold mr-[5px]">12,899</span>起
-                            </p>
-                        </div>
-                    </a>
-                    <a href="" class="free-trip-card flex h-30 bg-[#fafafa] rounded-tr-[10px] rounded-br-[10px]">
-                        <div class="card-img">
-                            <img src="https://image.cdn-eztravel.com.tw/S1rtfR0GUDbwKzUDo1tA4ezQdr-hASOrwM3BDanRcQQ/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly9ob3RlbC5jZG4tZXp0cmF2ZWwuY29tLnR3L2h0Zi9mcmcvRlhIL2FyZWFfMjAxL29raW5hd2FfMDMuanBn.jpg"
-                                alt="">
-                            <div class="shadow-bg"></div>
-                            <p class="absolute bottom-[10px] left-[10px] text-white">療癒海景度假勝地</p>
-                        </div>
-                        <div class="card-content flex-1 p-[10px] flex flex-col justify-between">
-                            <h3 class="font-bold">沖繩機加酒✈５天４夜</h3>
-                            <p class="price self-end"><span
-                                    class="text-[#ff8b00] text-lg font-bold mr-[5px]">9,300</span>起
-                            </p>
-                        </div>
-                    </a>
-                    <a href="" class="free-trip-card flex h-30 bg-[#fafafa] rounded-tr-[10px] rounded-br-[10px]">
-                        <div class="card-img">
-                            <img src="https://image.cdn-eztravel.com.tw/lPBDNeXYDpVD_nLLSRbZ6ySoArw77gLOV9Kzs4OYksE/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly9ldmVudC5jZG4tZXp0cmF2ZWwuY29tLnR3L2hwaW1nL2FwcC8yNjZ4MjAwLzI2NngyMDBfanhfbmdvLnBuZw.png"
-                                alt="">
-                            <div class="shadow-bg"></div>
-                            <p class="absolute bottom-[10px] left-[10px] text-white">豐富的歷史文化</p>
-                        </div>
-                        <div class="card-content flex-1 p-[10px] flex flex-col justify-between">
-                            <h3 class="font-bold">名古屋機加酒✈５天４夜</h3>
-                            <p class="price self-end"><span
-                                    class="text-[#ff8b00] text-lg font-bold mr-[5px]">12,299</span>起
-                            </p>
-                        </div>
-                    </a>
-                </div>
-                <div class="free-trip-cards grid hidden">
-                    <a href="" class="free-trip-card flex h-30 bg-[#fafafa] rounded-tr-[10px] rounded-br-[10px]">
-                        <div class="card-img">
-                            <img src="https://image.cdn-eztravel.com.tw/vmeJWBmCchvVxWcsL5Et58OiNQZMNjM6hWb7vNys1HY/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly9ob3RlbC5jZG4tZXp0cmF2ZWwuY29tLnR3L2h0Zi9mcmcvRlhIL2FyZWFfMjAzL-a-s-mWgDI2NlgyMDAuanBn.jpg"
-                                alt="">
-                            <div class="shadow-bg"></div>
-                            <p class="absolute bottom-[10px] left-[10px] text-white">分頁 2</p>
-                        </div>
-                        <div class="card-content flex-1 p-[10px] flex flex-col justify-between">
-                            <h3 class="font-bold">澳門機加酒✈３天２夜</h3>
-                            <p class="price self-end"><span
-                                    class="text-[#ff8b00] text-lg font-bold mr-[5px]">9,999</span>起
-                            </p>
-                        </div>
-                    </a>
-                    <a href="" class="free-trip-card flex h-30 bg-[#fafafa] rounded-tr-[10px] rounded-br-[10px]">
-                        <div class="card-img">
-                            <img src="https://image.cdn-eztravel.com.tw/nx8BUldCjiYaZzsu-PWg97095IUtKYBhS5kRScx6E00/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly9ob3RlbC5jZG4tZXp0cmF2ZWwuY29tLnR3L2h0Zi9mcmcvRlhIL2FyZWFfMjAxL3Rva3lvXzAxLmpwZw.jpg"
-                                alt="">
-                            <div class="shadow-bg"></div>
-                            <p class="absolute bottom-[10px] left-[10px] text-white">晴空塔、迪士尼</p>
-                        </div>
-                        <div class="card-content flex-1 p-[10px] flex flex-col justify-between">
-                            <h3 class="font-bold">東京機加酒✈５天４夜</h3>
-                            <p class="price self-end"><span
-                                    class="text-[#ff8b00] text-lg font-bold mr-[5px]">13,100</span>起
-                            </p>
-                        </div>
-                    </a>
-                    <a href="" class="free-trip-card flex h-30 bg-[#fafafa] rounded-tr-[10px] rounded-br-[10px]">
-                        <div class="card-img">
-                            <img src="https://image.cdn-eztravel.com.tw/6oquADtl2WX4Jts2PjwLoNXd2ZzrIDik0xPDY0W1DMg/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly9ob3RlbC5jZG4tZXp0cmF2ZWwuY29tLnR3L2h0Zi9mcmcvRlhIL2FyZWFfMjAyL2Jhbmdrb2tfMDIuanBn.jpg"
-                                alt="">
-                            <div class="shadow-bg"></div>
-                            <p class="absolute bottom-[10px] left-[10px] text-white">美食、購物、寺廟</p>
-                        </div>
-                        <div class="card-content flex-1 p-[10px] flex flex-col justify-between">
-                            <h3 class="font-bold">曼谷機加酒✈５天４夜</h3>
-                            <p class="price self-end"><span
-                                    class="text-[#ff8b00] text-lg font-bold mr-[5px]">9,200</span>起
-                            </p>
-                        </div>
-                    </a>
-                    <a href="" class="free-trip-card flex h-30 bg-[#fafafa] rounded-tr-[10px] rounded-br-[10px]">
-                        <div class="card-img">
-                            <img src="https://image.cdn-eztravel.com.tw/Le8YGTXFZgglS6ddQsO37D-l5LmAz-omwZAaOYdemVo/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly9ob3RlbC5jZG4tZXp0cmF2ZWwuY29tLnR3L2h0Zi9mcmcvRlhIL2FyZWFfMjAxL29zYWthXzAyLmpwZw.jpg"
-                                alt="">
-                            <div class="shadow-bg"></div>
-                            <p class="absolute bottom-[10px] left-[10px] text-white">特色美食逛街購物</p>
-                        </div>
-                        <div class="card-content flex-1 p-[10px] flex flex-col justify-between">
-                            <h3 class="font-bold">大阪機加酒✈５天４夜</h3>
-                            <p class="price self-end"><span
-                                    class="text-[#ff8b00] text-lg font-bold mr-[5px]">12,899</span>起
-                            </p>
-                        </div>
-                    </a>
-                    <a href="" class="free-trip-card flex h-30 bg-[#fafafa] rounded-tr-[10px] rounded-br-[10px]">
-                        <div class="card-img">
-                            <img src="https://image.cdn-eztravel.com.tw/S1rtfR0GUDbwKzUDo1tA4ezQdr-hASOrwM3BDanRcQQ/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly9ob3RlbC5jZG4tZXp0cmF2ZWwuY29tLnR3L2h0Zi9mcmcvRlhIL2FyZWFfMjAxL29raW5hd2FfMDMuanBn.jpg"
-                                alt="">
-                            <div class="shadow-bg"></div>
-                            <p class="absolute bottom-[10px] left-[10px] text-white">療癒海景度假勝地</p>
-                        </div>
-                        <div class="card-content flex-1 p-[10px] flex flex-col justify-between">
-                            <h3 class="font-bold">沖繩機加酒✈５天４夜</h3>
-                            <p class="price self-end"><span
-                                    class="text-[#ff8b00] text-lg font-bold mr-[5px]">9,300</span>起
-                            </p>
-                        </div>
-                    </a>
-                    <a href="" class="free-trip-card flex h-30 bg-[#fafafa] rounded-tr-[10px] rounded-br-[10px]">
-                        <div class="card-img">
-                            <img src="https://image.cdn-eztravel.com.tw/lPBDNeXYDpVD_nLLSRbZ6ySoArw77gLOV9Kzs4OYksE/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly9ldmVudC5jZG4tZXp0cmF2ZWwuY29tLnR3L2hwaW1nL2FwcC8yNjZ4MjAwLzI2NngyMDBfanhfbmdvLnBuZw.png"
-                                alt="">
-                            <div class="shadow-bg"></div>
-                            <p class="absolute bottom-[10px] left-[10px] text-white">豐富的歷史文化</p>
-                        </div>
-                        <div class="card-content flex-1 p-[10px] flex flex-col justify-between">
-                            <h3 class="font-bold">名古屋機加酒✈５天４夜</h3>
-                            <p class="price self-end"><span
-                                    class="text-[#ff8b00] text-lg font-bold mr-[5px]">12,299</span>起
-                            </p>
-                        </div>
-                    </a>
+                    <template x-for="item in items">
+                        <a href="" class="free-trip-card flex h-30 bg-[#fafafa] rounded-tr-[10px] rounded-br-[10px]">
+                            <div class="card-img">
+                                <img x-bind:src="item.img" x-bind:alt="item.imgLabel">
+                                <div class="shadow-bg"></div>
+                                <p x-text="item.imgLabel" class="absolute bottom-[10px] left-[10px] text-white"></p>
+                            </div>
+                            <div class="card-content flex-1 p-[10px] flex flex-col justify-between">
+                                <h3 x-text="item.title" class="font-bold"></h3>
+                                <p class="price self-end"><span x-text="item.price"
+                                        class="text-[#ff8b00] text-lg font-bold mr-[5px]"></span>起
+                                </p>
+                            </div>
+                        </a>
+                    </template>
                 </div>
             </div>
             <a class="free-trip-more flex items-center justify-end" href="https://packages.eztravel.com.tw/">

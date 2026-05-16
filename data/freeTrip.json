@@ -1,0 +1,233 @@
+[
+    {
+        "id": "featured",
+        "title": "精選推薦",
+        "subTabs": [
+            {
+                "label": "推薦專區",
+                "items": [
+                    {
+                        "id": 1,
+                        "imgLabel": "大三巴、旅遊塔",
+                        "title": "澳門機加酒✈３天２夜",
+                        "days": 3,
+                        "nights": 2,
+                        "price": "9,999",
+                        "img": "https://image.cdn-eztravel.com.tw/vmeJWBmCchvVxWcsL5Et58OiNQZMNjM6hWb7vNys1HY/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly9ob3RlbC5jZG4tZXp0cmF2ZWwuY29tLnR3L2h0Zi9mcmcvRlhIL2FyZWFfMjAzL-a-s-mWgDI2NlgyMDAuanBn.jpg",
+                        "url": "https://packages.eztravel.com.tw/roundtrip-TPE-MFM?travelday=2&passenger=200&roomqty=1"
+                    },
+                    {
+                        "id": 2,
+                        "imgLabel": "晴空塔、迪士尼",
+                        "title": "東京機加酒✈５天４夜",
+                        "days": 5,
+                        "nights": 4,
+                        "price": "13,100",
+                        "img": "https://image.cdn-eztravel.com.tw/nx8BUldCjiYaZzsu-PWg97095IUtKYBhS5kRScx6E00/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly9ob3RlbC5jZG4tZXp0cmF2ZWwuY29tLnR3L2h0Zi9mcmcvRlhIL2FyZWFfMjAxL3Rva3lvXzAxLmpwZw.jpg",
+                        "url": "https://packages.eztravel.com.tw/roundtrip-TPE-TYO"
+                    },
+                    {
+                        "id": 3,
+                        "imgLabel": "美食、購物、寺廟",
+                        "title": "曼谷機加酒✈５天４夜",
+                        "days": 5,
+                        "nights": 4,
+                        "price": "9,200",
+                        "img": "https://image.cdn-eztravel.com.tw/6oquADtl2WX4Jts2PjwLoNXd2ZzrIDik0xPDY0W1DMg/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly9ob3RlbC5jZG4tZXp0cmF2ZWwuY29tLnR3L2h0Zi9mcmcvRlhIL2FyZWFfMjAyL2Jhbmdrb2tfMDIuanBn.jpg",
+                        "url": "https://packages.eztravel.com.tw/roundtrip-TPE-BKK"
+                    },
+                    {
+                        "id": 4,
+                        "imgLabel": "特色美食逛街購物",
+                        "title": "大阪機加酒✈５天４夜",
+                        "days": 5,
+                        "nights": 4,
+                        "price": "12,899",
+                        "img": "https://image.cdn-eztravel.com.tw/Le8YGTXFZgglS6ddQsO37D-l5LmAz-omwZAaOYdemVo/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly9ob3RlbC5jZG4tZXp0cmF2ZWwuY29tLnR3L2h0Zi9mcmcvRlhIL2FyZWFfMjAxL29zYWthXzAyLmpwZw.jpg",
+                        "url": "https://packages.eztravel.com.tw/roundtrip-TPE-OSA"
+                    },
+                    {
+                        "id": 5,
+                        "imgLabel": "療癒海景度假勝地",
+                        "title": "沖繩機加酒✈５天４夜",
+                        "days": 5,
+                        "nights": 4,
+                        "price": "9,300",
+                        "img": "https://image.cdn-eztravel.com.tw/S1rtfR0GUDbwKzUDo1tA4ezQdr-hASOrwM3BDanRcQQ/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly9ob3RlbC5jZG4tZXp0cmF2ZWwuY29tLnR3L2h0Zi9mcmcvRlhIL2FyZWFfMjAxL29raW5hd2FfMDMuanBn.jpg",
+                        "url": "https://packages.eztravel.com.tw/roundtrip-TPE-OKA"
+                    },
+                    {
+                        "id": 6,
+                        "imgLabel": "豐富的歷史文化",
+                        "title": "名古屋機加酒✈５天４夜",
+                        "days": 5,
+                        "nights": 4,
+                        "price": "12,299",
+                        "img": "https://image.cdn-eztravel.com.tw/lPBDNeXYDpVD_nLLSRbZ6ySoArw77gLOV9Kzs4OYksE/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly9ldmVudC5jZG4tZXp0cmF2ZWwuY29tLnR3L2hwaW1nL2FwcC8yNjZ4MjAwLzI2NngyMDBfanhfbmdvLnBuZw.png",
+                        "url": "https://packages.eztravel.com.tw/roundtrip-TPE-NGO"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "japan",
+        "title": "日本",
+        "subTabs": [
+            {
+                "id": "tokyo",
+                "label": "東京",
+                "items": [
+                    {
+                        "id": 10,
+                        "imgLabel": "鄰近JR新宿東口",
+                        "title": "新宿馨樂庭機加酒✈５天４夜",
+                        "days": 5,
+                        "nights": 4,
+                        "price": "21,500",
+                        "url": "https://packages.eztravel.com.tw/roundtrip-TPE-TYO"
+                    },
+                    {
+                        "id": 11,
+                        "imgLabel": "鄰近池袋車站",
+                        "title": "JR東日本機加酒✈５天４夜",
+                        "days": 5,
+                        "nights": 4,
+                        "price": "19,499",
+                        "url": "https://packages.eztravel.com.tw/roundtrip-TPE-TYO"
+                    },
+                    {
+                        "id": 12,
+                        "imgLabel": "鄰近阿美橫丁商店街",
+                        "title": "MYSTAYS上野機加酒✈５天４夜",
+                        "days": 5,
+                        "nights": 4,
+                        "price": "16,699",
+                        "url": "https://packages.eztravel.com.tw/roundtrip-TPE-TYO"
+                    },
+                    {
+                        "id": 13,
+                        "imgLabel": "鄰近淺草寺",
+                        "title": "淺草B:Conte機加酒✈５天４夜",
+                        "days": 5,
+                        "nights": 4,
+                        "price": "21,200",
+                        "url": "https://packages.eztravel.com.tw/roundtrip-TPE-TYO"
+                    },
+                    {
+                        "id": 14,
+                        "imgLabel": "CP值高星野集團",
+                        "title": "OMO5大塚機加酒✈５天４夜",
+                        "days": 5,
+                        "nights": 4,
+                        "price": "19,950",
+                        "url": "https://packages.eztravel.com.tw/roundtrip-TPE-TYO"
+                    },
+                    {
+                        "id": 15,
+                        "imgLabel": "逛街購物首選",
+                        "title": "穆塞名鐵銀座機加酒✈５天４夜",
+                        "days": 5,
+                        "nights": 4,
+                        "price": "21,500",
+                        "url": "https://packages.eztravel.com.tw/roundtrip-TPE-TYO"
+                    }
+                ]
+            },
+            {
+                "id": "kansai",
+                "label": "關西",
+                "items": [
+                    {
+                        "id": 20,
+                        "imgLabel": "特色美食逛街購物",
+                        "title": "大阪機加酒✈５天４夜",
+                        "days": 5,
+                        "nights": 4,
+                        "price": "13,799",
+                        "url": "https://packages.eztravel.com.tw/roundtrip-TPE-OSA"
+                    },
+                    {
+                        "id": 21,
+                        "imgLabel": "文化櫥窗城市",
+                        "title": "京都機加酒✈５天４夜",
+                        "days": 5,
+                        "nights": 4,
+                        "price": "14,400",
+                        "url": "https://packages.eztravel.com.tw/roundtrip-TPE-OSA"
+                    },
+                    {
+                        "id": 22,
+                        "imgLabel": "港口城市特有街景",
+                        "title": "神戶機加酒✈５天４夜",
+                        "days": 5,
+                        "nights": 4,
+                        "price": "14,580",
+                        "url": "https://packages.eztravel.com.tw/roundtrip-TPE-OSA"
+                    },
+                    {
+                        "id": 23,
+                        "imgLabel": "古老寺廟、鹿群",
+                        "title": "奈良機加酒✈５天４夜",
+                        "days": 5,
+                        "nights": 4,
+                        "price": "14,600",
+                        "url": "https://packages.eztravel.com.tw/roundtrip-TPE-OSA"
+                    },
+                    {
+                        "id": 24,
+                        "imgLabel": "海岸及山林溫泉",
+                        "title": "和歌山機加酒✈５天４夜",
+                        "days": 5,
+                        "nights": 4,
+                        "price": "14,799",
+                        "url": "https://packages.eztravel.com.tw/roundtrip-TPE-OSA"
+                    },
+                    {
+                        "id": 25,
+                        "imgLabel": "神社之首伊勢神宮",
+                        "title": "三重機加酒✈５天４夜",
+                        "days": 5,
+                        "nights": 4,
+                        "price": "16,900",
+                        "url": "https://packages.eztravel.com.tw/roundtrip-TPE-OSA"
+                    }
+                ]
+            },
+            {
+                "id": "okinawa",
+                "label": "沖繩",
+                "items": []
+            },
+            {
+                "id": "hokkaido",
+                "label": "北海道",
+                "items": []
+            }
+        ]
+    },
+    {
+        "id": "sea",
+        "title": "東南亞",
+        "subTabs": [],
+        "items": []
+    },
+    {
+        "id": "island_eu",
+        "title": "島嶼/歐洲",
+        "subTabs": [],
+        "items": []
+    },
+    {
+        "id": "kaohsiung",
+        "title": "高雄出發",
+        "subTabs": [],
+        "items": []
+    },
+    {
+        "id": "taichung",
+        "title": "台中出發",
+        "subTabs": [],
+        "items": []
+    }
+]
